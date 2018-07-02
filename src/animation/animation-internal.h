@@ -450,6 +450,9 @@ fxFoldUpdateWindowAttrib (CompWindow * w,
 Bool
 fxCurvedFoldZoomToIcon (CompWindow *w);
 
+void
+initiateFocusAnimation (CompWindow *w);
+
 /* dodge.c */
 
 void
@@ -575,6 +578,16 @@ animGetPluginOptVal (CompWindow *w,
 
 OPTION_GETTERS_HDR
 
+/* restack.c */
+void
+handleWindowRestack (CompScreen *s);
+
+void
+saveRestackInfo (CompWindow *w, Window *clientListStacking, int n);
+
+void
+resetStackingInfo (CompScreen *s);
+
 /* rollup.c */
  
 void
@@ -587,6 +600,12 @@ void fxRollUpInitGrid (CompWindow *w,
  
 Bool
 fxRollUpAnimInit (CompWindow * w);
+
+/* walker.c */
+	
+void
+animInitWindowWalker (CompScreen *s,
+		      CompWalker *walker);
 
 /* wave.c */
  
